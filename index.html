@@ -11,13 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // https://financialmodelingprep.com/developer/docs
 
   getRequest(
-    'https://financialmodelingprep.com/api/v3/quote-short/AAPL?apikey=demo',
+    'https://financialmodelingprep.com/api/v3/quote-short/NET?apikey=demo',
     drawOutput
   );
 
   setInterval(() => {
     getRequest(
-      'https://financialmodelingprep.com/api/v3/quote-short/AAPL?apikey=demo',
+      'https://financialmodelingprep.com/api/v3/quote-short/NET?apikey=demo',
       drawOutput
     );
   }, 1000 * intervalTime);
