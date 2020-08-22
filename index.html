@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>StockMe Right Now</title>
+
+<head>
+    <H1 id = "TickerPrice">$0.00</H1>
+</head>
+
+<body>
+    <form>
+        <label>
+            <b>
+                Enter Stock Ticker
+            </b>
+        </label>
+        <input type = "text" id = "user_input" name = "user_input"><br><br>
+    </form>
+        
+    <input type = "submit" value = "Get Price" onClick="priceChange()"><br/>
+
+</body>
+
+<script>
+/*
+    const puppeteer = require('puppeteer');
+
+    async function scrapeProduct(url){
+        const browser = await puppeteer.launch();
+        const page = await browser.newPage();
+        await page.goto(url);
+
+        const price = await page.evaluate(() => document.querySelector("#quote-header-info > div.My\\(6px\\).Pos\\(r\\).smartphone_Mt\\(6px\\) > div.D\\(ib\\).Va\\(m\\).Maw\\(65\\%\\).Ov\\(h\\) > div > span.Trsdu\\(0\\.3s\\).Fw\\(b\\).Fz\\(36px\\).Mb\\(-4px\\).D\\(ib\\)").textContent);
+        console.log(price);
+        browser.close();
+    }
+    scrapeProduct('https://ca.finance.yahoo.com/quote/net/');*/
+
+    function priceChange() {
+        var tickerName = document.getElementById("user_input").value;
+        document.getElementById("TickerPrice").innerHTML = price;
+    }
+</script>
+
+</html>
+
+
+
+
+
+
+
