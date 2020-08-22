@@ -1,24 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<title>StockMe Right Now</title>
-
-<head>
-    <H1 id = "TickerPrice">$0.00</H1>
-</head>
-
-<body>
-    <form>
-        <label>
-            <b>
-                Enter Stock Ticker
-            </b>
-        </label>
-        <input type = "text" id = "user_input" name = "user_input"><br><br>
-    </form>
-        
-    <input type = "submit" value = "Get Price" onClick="priceChange()"><br/>
-
-</body>
+<div class="container">
+  Apple Inc.
+  <div class="stock-name"></div>
+  <div class="time"></div>
+</div>
 
 <script>
 var intervalTime = 60;
