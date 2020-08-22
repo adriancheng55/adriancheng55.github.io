@@ -21,20 +21,11 @@
 </body>
 
 <script>
-/*
-    const puppeteer = require('puppeteer');
+	getJSON('http://time.jsontest.com', function(data){
+		console.log(data);
+		console.log("ASD");
+	}
 
-    async function scrapeProduct(url){
-        const browser = await puppeteer.launch();
-        const page = await browser.newPage();
-        await page.goto(url);
-
-        const price = await page.evaluate(() => document.querySelector("#quote-header-info > div.My\\(6px\\).Pos\\(r\\).smartphone_Mt\\(6px\\) > div.D\\(ib\\).Va\\(m\\).Maw\\(65\\%\\).Ov\\(h\\) > div > span.Trsdu\\(0\\.3s\\).Fw\\(b\\).Fz\\(36px\\).Mb\\(-4px\\).D\\(ib\\)").textContent);
-        console.log(price);
-        browser.close();
-    }
-    scrapeProduct('https://ca.finance.yahoo.com/quote/net/');
-*/
     function priceChange() {
         var tickerName = document.getElementById("user_input").value;
         document.getElementById("TickerPrice").innerHTML = tickerName;
