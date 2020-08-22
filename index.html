@@ -21,10 +21,15 @@
 </body>
 
 <script>
-	getJSON('http://time.jsontest.com', function(data){
-		console.log(data);
-		console.log("ASD");
-	}
+    $.getJSON('http://time.jsontest.com', function(data) {
+        
+        var text = `Date: ${data.date}<br>
+                    Time: ${data.time}<br>
+                    Unix time: ${data.milliseconds_since_epoch}`
+                    
+        
+        $(".mypanel").html(text);
+    });
 
     function priceChange() {
         var tickerName = document.getElementById("user_input").value;
