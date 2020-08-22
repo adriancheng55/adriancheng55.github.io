@@ -1,71 +1,26 @@
-<div class="container">
-  Apple Inc.
-  <div class="stock-name"></div>
-  <div class="time"></div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<title>StockMe Right Now</title>
+
+<head>
+    <H1 id = "TickerPrice">$0.00</H1>
+</head>
+
+<body>
+    <form>
+        <label>
+            <b>
+                Enter Stock Ticker
+            </b>
+        </label>
+        <input type = "text" id = "user_input" name = "user_input"><br><br>
+    </form>
+        
+    <input type = "submit" value = "Get Price" onClick="priceChange()"><br/>
+
+</body>
 
 <script>
-var intervalTime = 60;
-
-document.addEventListener('DOMContentLoaded', () => {
-  // https://financialmodelingprep.com/developer/docs
-
-  getRequest(
-    'https://financialmodelingprep.com/api/v3/quote-short/NET?apikey=demo',
-    drawOutput
-  );
-
-  setInterval(() => {
-    getRequest(
-      'https://financialmodelingprep.com/api/v3/quote-short/NET?apikey=demo',
-      drawOutput
-    );
-  }, 1000 * intervalTime);
-
-  function drawOutput(responseText) {
-
-    let resp = JSON.parse(responseText);
-
-    var elements = document.querySelectorAll('.stock-name')[0];
-    
-    elements.innerHTML = "$ " + resp[0].price;
-
-    var time = document.querySelectorAll('.time')[0];
-    var usaTime = new Date().toLocaleString("en-US", {timeZone: "America/New_York"});
-		usaTime = new Date(usaTime);
-    time.innerHTML = usaTime;
-
-  }
-
-  function getRequest(url, success) {
-    var req = false;
-    try {
-      req = new XMLHttpRequest();
-    } catch (e) {
-      try {
-        req = new ActiveXObject("Msxml2.XMLHTTP");
-      } catch (e) {
-        try {
-          req = new ActiveXObject("Microsoft.XMLHTTP");
-        } catch (e) {
-          return false;
-        }
-      }
-    }
-    if (!req) return false;
-    if (typeof success != 'function') success = function() {};
-    req.onreadystatechange = function() {
-      if (req.readyState == 4) {
-        if (req.status === 200) {
-          success(req.responseText)
-        }
-      }
-    }
-    req.open("GET", url, true);
-    req.send(null);
-    return req;
-  }
-})
 /*
     const puppeteer = require('puppeteer');
 
@@ -79,11 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
         browser.close();
     }
     scrapeProduct('https://ca.finance.yahoo.com/quote/net/');
-
+*/
     function priceChange() {
         var tickerName = document.getElementById("user_input").value;
-        document.getElementById("TickerPrice").innerHTML = price;
-    }*/
+        document.getElementById("TickerPrice").innerHTML = tickerName;
+    }
 </script>
 
 </html>
